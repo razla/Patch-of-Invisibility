@@ -1,6 +1,6 @@
-## Accepted at ICCV 2021 !!
+## Under review to CVPR 2024
 
-## Naturalistic Physical Adversarial Patch for Object Detectors 
+## Patch of Invisibility: Naturalistic Physical Black-Box Adversarial Attacks on Object Detectors
 
 <!-- Official PyTorch implementation of **Re-labeling ImageNet** | [Paper](https://arxiv.org/abs/2101.05022) | [Pretrained Models](#experiments)  -->
 
