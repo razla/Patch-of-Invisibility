@@ -71,6 +71,7 @@ python ensemble.py --model=yolov4 --tiny --method=bbgan --epochs=1000
 - `--method`: which kind of method to use (bbgan/raw/random_raw/random_gan/nes).
 - `--epochs`: number of epochs to train.
 
+If you want to restore the experiments in the paper, you have all the hyperparameters used in `records.md`
 
 ## Credits
 - BigGAN code and weights are base on: [GANLatentDiscovery](https://github.com/anvoynov/GANLatentDiscovery)
