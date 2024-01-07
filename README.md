@@ -76,13 +76,11 @@ If you want to restore the experiments in the paper, you have all the hyperparam
 ## Credits
 - BigGAN code and weights are base on: [GANLatentDiscovery](https://github.com/anvoynov/GANLatentDiscovery)
 
-- StyleGAN2 code and wieghts are based on: [stylegan2](https://github.com/NVlabs/stylegan2)
-
-- YOLOv2 and adversarial patch codes are based on: [adversarial-yolo](https://gitlab.com/EAVISE/adversarial-yolo)
-
 - YOLOv3 code and weights are based on: [PyTorch-YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3)
 
-- YOLOv4 code and weights are based on: [pytorch-YOLOv4](https://github.com/Tianxiaomo/pytorch-YOLOv4)
+- YOLOv4 code and weights are based on: [PyTorch-YOLOv4](https://github.com/Tianxiaomo/pytorch-YOLOv4)
+
+- YOLOv5 code and weights are based on: [PyTorch-YOLOv5](https://github.com/ultralytics/yolov5)
 ## Citation
 
 ```
