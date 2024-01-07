@@ -1,29 +1,20 @@
-## Under review to CVPR 2024
+## Under review at CVPR 2024
 
 ## Patch of Invisibility: Naturalistic Physical Black-Box Adversarial Attacks on Object Detectors
 
-<!-- Official PyTorch implementation of **Re-labeling ImageNet** | [Paper](https://arxiv.org/abs/2101.05022) | [Pretrained Models](#experiments)  -->
-
-<!-- **[Sangdoo Yun](https://sangdooyun.github.io/), Seong Joon Oh, Byeongho Heo, Dongyoon Han, Junsuk Choe, Sanghyuk Chun** -->
-<!--  -->
-<!-- NAVER AI LAB -->
-Aiiu-lab @ Academia Sinica
-
-<img src="./patch/teaser.jpg" width="50%" title="" alt="teaser"></img>
-
 ### Abstract
-Most prior works on physical adversarial attacks mainly focus on the attack performance but seldom enforce any restrictions over the appearance of the generated adversarial patches. This leads to conspicuous and attention-grabbing patterns for the generated patches which can be easily identified by humans. To address this issue, we propose a method to craft physical adversarial patches for object detectors by leveraging the learned image manifold of a pretrained generative adversarial network (GAN) (e.g., BigGAN and StyleGAN) upon real-world images. Through sampling the optimal image from the GAN, our method can generate natural looking adversarial patches while maintaining high attack performance. With extensive experiments on both digital and physical domains and several independent subjective surveys, the results show that our proposed method produces significantly more realistic and natural looking patches than several state-of-the-art baselines while achieving competitive attack performance.
+Adversarial attacks on deep-learning models have been receiving increased attention in recent years. Work in this area has mostly focused on gradient-based techniques, so-called ``white-box'' attacks, wherein the attacker has access to the targeted model's internal parameters; such an assumption is usually unrealistic in the real world. Some attacks additionally use the entire pixel space to fool a given model, which is neither practical nor physical (i.e., real-world). On the contrary, we propose herein a direct, black-box, gradient-free method that uses the learned image manifold of a pretrained generative adversarial network (GAN) to generate naturalistic physical adversarial patches for object detectors. To our knowledge this is the first and only method that performs black-box physical attacks **directly** on object-detection models, which results with a model-agnostic attack. We show that our proposed method works both digitally and physically. We compared our approach against three models and four black-box attacks with different configurations. Our approach outperformed **all** other approaches that were tested in our experiments by a large margin.
 
 
 ## News
-- **Aug 26, 2021**: Open source
+- **Jan 7, 2024**: Open source
 
 ## Installation
 ### Clone the code and build the environment
 Clone the code:
 ```bash
-git clone https://github.com/aiiu-lab/Naturalistic-Adversarial-Patch
-cd Naturalistic-Adversarial-Patch
+git clone https://github.com/razla/Patch-Of-Invisibility.git
+cd Patch-Of-Invisibility
 ```
 Build the environment and install PyTorch and Torchvision as following [official PyTorch instruction](https://pytorch.org/get-started/locally/)
 ```bash
