@@ -16,17 +16,13 @@ Clone the code:
 git clone https://github.com/razla/Patch-Of-Invisibility.git
 cd Patch-Of-Invisibility
 ```
-Build the environment and install PyTorch and Torchvision as following [official PyTorch instruction](https://pytorch.org/get-started/locally/)
+Build the environment and install the packages
 ```bash
-conda create -n advpatch python=3.7
+conda create -n advpatch python=3.10
 conda activate advpatch
-conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
-```
-
-Install other packages using the following command:
-```bash
 pip install -r requirements.txt
 ```
+
 ### Dataset
 Download the INRIA dataset using following command:
 ```bash
@@ -34,20 +30,7 @@ bash download_inria.sh
 ```
 The original INRIA dataset comes from [INRIA](http://pascal.inrialpes.fr/data/human/).
 
-Check the dataset position:
-```
-Naturalistic-Adversarial-Patch                           
- └─── dataset
-        └───── inria
-                └───── Test
-                        └───── ...
-                └───── Train
-                        └───── pos
-                                └───── yolo-labels_yolov4tiny
-                                └───── *.png
-                                └───── ...
- 
-```
+Change the dataset path in new_utils.py file.
 
 ### Pretrained weights  
 The proposed method needs a GAN and a detector to generate an adversarial patch. 
@@ -69,10 +52,10 @@ bash ./PyTorchYOLOv3/weights/download_weights.sh
 bash ./adversarialYolo/weights/download_weight.sh
 ```
 ## How to Run
-After you prepare the weights and dataset, you can evaluate or generate a naturalistic adversarial patch:
+After you prepare the weights and dataset, you can evaluate or generate a patch:
 ### Test an adversarial patch:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python evaluation.py --model yolov4 --tiny --patch ./patch_sample/v4tiny.png
+python evaluation.py --model yolov4 --tiny --patch ./patch_sample/v4tiny.png
 ```
 - `--model`: detector model. You can use yolov2, yolov3, yolov4, or fasterrcnn.
 - `--tiny`: only works for YOLOv3 and YOLOv4. To use TOLOv4tiny, enable this argument.
@@ -81,17 +64,13 @@ CUDA_VISIBLE_DEVICES=0 python evaluation.py --model yolov4 --tiny --patch ./patc
 ### Train an adversarial patch:
 To train an adversarial patch using YOLOv4tiny:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python ensemble.py --model=yolov4 --tiny
+python ensemble.py --model=yolov4 --tiny --method=bbgan --epochs=1000
 ```
 - `--model`: detector model. You can use yolov2, yolov3, yolov4, or fasterrcnn.
 - `--tiny`: only works for YOLOv3 and YOLOv4. To use TOLOv4tiny, enable this argument.
-- `--classBiggan`: the class of generated patch. You can choose from 0 to 999 (ImageNet pretrained). 
+- `--method`: which kind of method to use (bbgan/raw/random_raw/random_gan/nes).
+- `--epochs`: number of epochs to train.
 
-The result (i.e, adversarial patch) will be saved at exp/exp{experiemnt id} automatically.
-You can use tensorboard to check the training history: 
-```bash
-tensorboard --logdir=./exp 
-```
 
 ## Credits
 - BigGAN code and weights are base on: [GANLatentDiscovery](https://github.com/anvoynov/GANLatentDiscovery)
@@ -106,11 +85,11 @@ tensorboard --logdir=./exp
 ## Citation
 
 ```
-@inproceedings{hu2021naturalistic,
-  title={Naturalistic Physical Adversarial Patch for Object Detectors},
-  author={Hu, Yu-Chih-Tuan and Kung, Bo-Han and Tan, Daniel Stanley and Chen, Jun-Cheng and Hua, Kai-Lung and Cheng, Wen-Huang},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  year={2021}
+@article{lapid2023patch,
+  title={Patch of invisibility: Naturalistic black-box adversarial attacks on object detectors},
+  author={Lapid, Raz and Sipper, Moshe},
+  journal={arXiv preprint arXiv:2303.04238},
+  year={2023}
 }
 ```
 # Patch-Of-Invisibility
