@@ -39,17 +39,15 @@ You can download the necessary weights by running the following command:
 ```bash
 bash ./GANLatentDiscovery/download_weights.sh
 ```
-- YOLOv4 and YOLOv4tiny:
+- YOLOv5s:
+Automatically downloaded
+- YOLOv4tiny:
 ```bash 
 bash ./pytorchYOLOv4/weight/download_weights.sh
 ```
-- YOLOv3 and YOLOv3tiny:
+- YOLOv3tiny:
 ```bash 
 bash ./PyTorchYOLOv3/weights/download_weights.sh
-```
-- YOLOv2:
-```bash 
-bash ./adversarialYolo/weights/download_weight.sh
 ```
 ## How to Run
 After you prepare the weights and dataset, you can evaluate or generate a patch:
@@ -66,7 +64,7 @@ To train an adversarial patch using YOLOv4tiny:
 ```bash
 python ensemble.py --model=yolov4 --tiny --method=bbgan --epochs=1000
 ```
-- `--model`: detector model. You can use yolov2, yolov3, yolov4, or fasterrcnn.
+- `--model`: detector model. You can use yolov3, yolov4, or yolov5s.
 - `--tiny`: only works for YOLOv3 and YOLOv4. To use TOLOv4tiny, enable this argument.
 - `--method`: which kind of method to use (bbgan/raw/random_raw/random_gan/nes).
 - `--epochs`: number of epochs to train.
