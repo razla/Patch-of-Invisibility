@@ -1,6 +1,9 @@
-## Under review at CVPR 2024
+# XAI-Based Detection of Adversarial Attacks on Deepfake Detectors
 
-## Patch of Invisibility: Naturalistic Physical Black-Box Adversarial Attacks on Object Detectors
+## This paper was accepted to ECML-PKDD, Workshop on Machine Learning and Cybersecurity 2024 (MLCS @ ECML-PKDD 2024)
+
+Code accompanying the paper:
+[Patch of Invisibility: Naturalistic Physical Black-Box Adversarial Attacks on Object Detectors", MLCS @ ECML-PKDD, 2024].
 
 ### Abstract
 Adversarial attacks on deep-learning models have been receiving increased attention in recent years. Work in this area has mostly focused on gradient-based techniques, so-called ``white-box'' attacks, wherein the attacker has access to the targeted model's internal parameters; such an assumption is usually unrealistic in the real world. Some attacks additionally use the entire pixel space to fool a given model, which is neither practical nor physical (i.e., real-world). On the contrary, we propose herein a direct, black-box, gradient-free method that uses the learned image manifold of a pretrained generative adversarial network (GAN) to generate naturalistic physical adversarial patches for object detectors. To our knowledge this is the first and only method that performs black-box physical attacks **directly** on object-detection models, which results with a model-agnostic attack. We show that our proposed method works both digitally and physically. We compared our approach against three models and four black-box attacks with different configurations. Our approach outperformed **all** other approaches that were tested in our experiments by a large margin.
